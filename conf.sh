@@ -17,3 +17,5 @@ cat $HOME/.ssh/${key_filename}.pub
 
 git config --global user.email "$email"
 git config --global user.name "$name"
+
+ssh -T git@github.com
