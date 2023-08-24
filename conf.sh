@@ -3,7 +3,8 @@ mkdir -p $HOME/.ssh
 
 read -p "Set GitHub's Name : " name
 read -p "Set GitHub's Email : " email
-read -p "Enter a filename for the SSH key (e.g., id_ed25519): " key_filename
+read -p "Enter a filename for the SSH key (e.g., id_ed25519) [default=id_ed25519]: " key_filename
+key_filename=${key_filename:-id_ed25519}
 read -p "Enter a passphrase (or press Enter for no passphrase): " passphrase
 
 ssh-keygen -t ed25519 -C "$email" -N "$passphrase" -f $HOME/.ssh/$key_filename
